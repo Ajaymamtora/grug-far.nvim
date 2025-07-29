@@ -240,6 +240,9 @@ grug_far.defaultOptions = {
   -- row in the window to position the cursor at at start
   startCursorRow = 1,
 
+  -- whether to start with fixed strings mode enabled
+  startWithFixedStringsOn = false,
+
   -- whether to wrap text in the grug-far buffer
   wrap = true,
 
@@ -316,6 +319,7 @@ grug_far.defaultOptions = {
     abort = { n = '<localleader>b' },
     help = { n = 'g?' },
     toggleShowCommand = { n = '<localleader>w' },
+    toggleFixedStrings = { n = '<localleader>z' },
     swapEngine = { n = '<localleader>e' },
     previewLocation = { n = '<localleader>i' },
     swapReplacementInterpreter = { n = '<localleader>x' },
@@ -594,6 +598,7 @@ grug_far.defaultOptions = {
 ---@field toggleShowCommand KeymapDef
 ---@field abort KeymapDef
 ---@field help KeymapDef
+---@field toggleFixedStrings KeymapDef
 ---@field swapEngine KeymapDef
 ---@field previewLocation KeymapDef
 ---@field swapReplacementInterpreter KeymapDef
@@ -623,6 +628,7 @@ grug_far.defaultOptions = {
 ---@field toggleShowCommand? KeymapDef
 ---@field abort? KeymapDef
 ---@field help? KeymapDef
+---@field toggleFixedStrings? KeymapDef
 ---@field swapEngine? KeymapDef
 ---@field previewLocation? KeymapDef
 ---@field swapReplacementInterpreter? KeymapDef
@@ -867,6 +873,7 @@ grug_far.defaultOptions = {
 ---@field staticTitle? string
 ---@field startInInsertMode boolean
 ---@field startCursorRow integer
+---@field startWithFixedStringsOn boolean
 ---@field showCompactInputs boolean
 ---@field showInputsTopPadding boolean
 ---@field showInputsBottomPadding boolean
@@ -924,6 +931,7 @@ grug_far.defaultOptions = {
 ---@field staticTitle? string
 ---@field startInInsertMode? boolean
 ---@field startCursorRow? integer
+---@field startWithFixedStringsOn? boolean
 ---@field showCompactInputs? boolean
 ---@field showInputsTopPadding? boolean
 ---@field showInputsBottomPadding? boolean

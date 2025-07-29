@@ -64,6 +64,7 @@ local function createContext(options)
       lastCursorLocation = nil,
       tasks = {},
       showSearchCommand = false,
+      fixedStrings = false,
       bufClosed = false,
       highlightRegions = {},
       highlightResults = {},
@@ -263,6 +264,11 @@ function grug_far._open_internal(options, params)
   local context = createContext(options)
   if not options.instanceName then
     options.instanceName = '__grug_far_instance__' .. context.count
+  end
+  
+  -- set initial fixed strings state based on option
+  if options.startWithFixedStringsOn then
+    context.state.fixedStrings = true
   end
   if params.visual_selection_info then
     options.prefills = context.engine.getInputPrefillsForVisualSelection(

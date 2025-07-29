@@ -201,6 +201,14 @@ local function getActions(buf, context)
       end,
     },
     {
+      text = 'Toggle Fixed Strings',
+      keymap = keymaps.toggleFixedStrings,
+      description = 'Toggle fixed strings mode. When enabled, search treats input literally (no regex) and automatically escapes special characters in replacements.',
+      action = function()
+        get_inst():toggle_fixed_strings()
+      end,
+    },
+    {
       text = 'Preview',
       keymap = keymaps.previewLocation,
       description = 'Preview location in floating window.',
