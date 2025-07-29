@@ -316,6 +316,7 @@ grug_far.defaultOptions = {
     abort = { n = '<localleader>b' },
     help = { n = 'g?' },
     toggleShowCommand = { n = '<localleader>w' },
+    toggleFixedStrings = { n = '<localleader>z' },
     swapEngine = { n = '<localleader>e' },
     previewLocation = { n = '<localleader>i' },
     swapReplacementInterpreter = { n = '<localleader>x' },
@@ -594,6 +595,7 @@ grug_far.defaultOptions = {
 ---@field toggleShowCommand KeymapDef
 ---@field abort KeymapDef
 ---@field help KeymapDef
+---@field toggleFixedStrings KeymapDef
 ---@field swapEngine KeymapDef
 ---@field previewLocation KeymapDef
 ---@field swapReplacementInterpreter KeymapDef
@@ -623,6 +625,7 @@ grug_far.defaultOptions = {
 ---@field toggleShowCommand? KeymapDef
 ---@field abort? KeymapDef
 ---@field help? KeymapDef
+---@field toggleFixedStrings? KeymapDef
 ---@field swapEngine? KeymapDef
 ---@field previewLocation? KeymapDef
 ---@field swapReplacementInterpreter? KeymapDef

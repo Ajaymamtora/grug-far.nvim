@@ -16,7 +16,17 @@ local function getArgs(inputs, options, extraArgs, blacklistedFlags, forceReplac
   local args = {}
 
   if forceReplace or #inputs.replacement > 0 then
-    table.insert(args, '--replace=' .. inputs.replacement)
+    local replacement = inputs.replacement
+    
+    -- escape $ characters in replacement when in fixed strings mode
+    ---@diagnostic disable-next-line: undefined-field
+    local context = options.__grug_far_context__
+    if context and context.state.fixedStrings then
+      -- escape $ characters to prevent them being interpreted as capture group references
+      replacement = replacement:gsub('%$', '$$')
+    end
+    
+    table.insert(args, '--replace=' .. replacement)
   end
 
   -- user overrides
@@ -63,6 +73,13 @@ local function getArgs(inputs, options, extraArgs, blacklistedFlags, forceReplac
   table.insert(args, '--field-match-separator=:')
   table.insert(args, '--block-buffered')
   table.insert(args, '--with-filename')
+
+  -- add --fixed-strings flag if fixed strings mode is enabled
+  ---@diagnostic disable-next-line: undefined-field
+  local context = options.__grug_far_context__
+  if context and context.state.fixedStrings then
+    table.insert(args, '--fixed-strings')
+  end
 
   -- note: --hyperlink-format not supported in rg v13
   local version = getRgVersion(options)

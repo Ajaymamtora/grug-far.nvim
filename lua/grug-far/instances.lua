@@ -354,6 +354,12 @@ function inst:toggle_show_search_command()
   require('grug-far.actions.toggleShowCommand')(self._params)
 end
 
+--- toggle fixed strings mode. When enabled, treats search literally and escapes special characters in replacements.
+function inst:toggle_fixed_strings()
+  self:ensure_open()
+  require('grug-far.actions.toggleFixedStrings')(self._params)
+end
+
 --- preview source location associated with current line in a floating window
 function inst:preview_location()
   self:ensure_open()

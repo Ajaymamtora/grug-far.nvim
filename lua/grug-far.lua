@@ -64,6 +64,7 @@ local function createContext(options)
       lastCursorLocation = nil,
       tasks = {},
       showSearchCommand = false,
+      fixedStrings = false,
       bufClosed = false,
       highlightRegions = {},
       highlightResults = {},

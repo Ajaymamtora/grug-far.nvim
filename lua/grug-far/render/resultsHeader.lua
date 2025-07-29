@@ -44,6 +44,7 @@ local function getSeparator(context)
       .. engine_type
       .. ' '
       .. (context.state.normalModeSearch and '- normal mode search ' or '')
+      .. (context.state.fixedStrings and '- fixed strings ' or '')
       .. (opts.getIcon('resultsEngineRight', context) or '')
   end
 
