@@ -240,6 +240,9 @@ grug_far.defaultOptions = {
   -- row in the window to position the cursor at at start
   startCursorRow = 1,
 
+  -- whether to start with fixed strings mode enabled
+  startWithFixedStringsOn = false,
+
   -- whether to wrap text in the grug-far buffer
   wrap = true,
 
@@ -870,6 +873,7 @@ grug_far.defaultOptions = {
 ---@field staticTitle? string
 ---@field startInInsertMode boolean
 ---@field startCursorRow integer
+---@field startWithFixedStringsOn boolean
 ---@field showCompactInputs boolean
 ---@field showInputsTopPadding boolean
 ---@field showInputsBottomPadding boolean
@@ -927,6 +931,7 @@ grug_far.defaultOptions = {
 ---@field staticTitle? string
 ---@field startInInsertMode? boolean
 ---@field startCursorRow? integer
+---@field startWithFixedStringsOn? boolean
 ---@field showCompactInputs? boolean
 ---@field showInputsTopPadding? boolean
 ---@field showInputsBottomPadding? boolean
