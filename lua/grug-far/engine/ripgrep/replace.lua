@@ -64,7 +64,7 @@ local function replaceInBufrange(params)
   local chunk_error = nil
   local abort
   local stdin = uv.new_pipe()
-  local input_text = table.concat(bufrange.lines, '\n')
+  local input_text = table.concat(bufrange.lines, utils.eol)
   abort = fetchCommandOutput({
     cmd_path = params.options.engines.ripgrep.path,
     args = args,
@@ -110,7 +110,7 @@ local function replaceInBufrange(params)
             and parseResults.getReplacedContents(input_text, json_data)
           or text_data:sub(1, -2) -- strip of extra \n introduced by rg
 
-        utils.writeInBufrange(bufrange, vim.split(new_text, '\n'))
+        utils.writeInBufrange(bufrange, vim.split(new_text, utils.eol))
       end
 
       return on_finish('success')
